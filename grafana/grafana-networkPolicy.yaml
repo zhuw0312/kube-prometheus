@@ -18,7 +18,7 @@ spec:
           app.kubernetes.io/name: prometheus
     - namespaceSelector:
         matchLabels:
-          kubernetes.io/metadata.name: traefik
+          app.kubernetes.io/name: traefik
     ports:
     - port: 3000
       protocol: TCP

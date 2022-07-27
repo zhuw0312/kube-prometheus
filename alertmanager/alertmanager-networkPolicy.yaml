@@ -19,7 +19,7 @@ spec:
           app.kubernetes.io/name: prometheus
     - namespaceSelector:
         matchLabels:
-          kubernetes.io/metadata.name: traefik
+          app.kubernetes.io/name: traefik
     ports:
     - port: 9093
       protocol: TCP
