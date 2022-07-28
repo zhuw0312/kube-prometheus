@@ -23,6 +23,8 @@ spec:
     - port: 8080
       protocol: TCP
   - from:
+    - ipBlock:
+        cidr: 0.0.0.0/0
     - podSelector:
         matchLabels:
           app.kubernetes.io/name: grafana
