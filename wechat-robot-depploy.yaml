@@ -29,10 +29,17 @@ spec:
         name: work-wechat-robot
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /etc/localtime
+          name: tz
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
       terminationGracePeriodSeconds: 30
+      volumes:
+      - hostPath:
+          path: /usr/share/zoneinfo/Asia/Shanghai
+        name: tz
 ---
 apiVersion: v1
 kind: Service
