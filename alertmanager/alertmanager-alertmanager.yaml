@@ -33,4 +33,13 @@ spec:
     runAsNonRoot: true
     runAsUser: 1000
   serviceAccountName: alertmanager-main
+  storage:
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+          - ReadWriteMany
+          resources:
+            requests:
+              storage: 5Gi
+          storageClassName: longhorn
   version: 0.24.0
